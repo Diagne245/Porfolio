@@ -1,0 +1,364 @@
+// Partials---------------------------
+@import 'config';
+@import 'utilities';
+
+
+// General styles----------------------
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Dosis', sans-serif;
+  background: #fff;
+  color: $dark-color;
+  line-height: 1.6; 
+  overflow-x: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $dark-color;
+}
+
+h2, h3, h4 {
+  text-transform: uppercase;
+}
+
+img {
+  width: 100%;
+}
+
+// Showcase Styling---------------------
+.main-header {
+  width: 100vw;
+  height: 100vh;
+  background: $bg-image no-repeat center right/cover;
+
+  .navbar {
+    height: $navbar-height;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+
+    .logo {
+      width: 2.5rem;
+      padding: .5rem 0 0 .5rem;
+    }
+    nav {
+      grid-column: 3;
+      ul {
+        display: flex;
+        justify-content: flex-end;
+
+        li {
+          padding: 0 .25rem;
+
+          a {
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+            color: #fff;
+            font-size: small;
+            padding: .1rem;
+            border-bottom: transparent 3px solid;
+            transition: border-color .5s;
+            
+            &:hover {
+              border-color: $medium-color;
+            }
+            
+            &.current {
+              border-color: $primary-color;
+            }
+
+          }  
+        }
+      }
+
+    }
+  }
+
+  // Profile
+  .showcase-content {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    font-weight: bold; 
+    padding-top: 2rem;
+    
+    .btn-light:hover { background: $primary-color}
+  }
+}
+
+// skillset Section----------------
+#skillset, #creativity {
+
+  .skillset {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    text-align: center;
+    font-size: small;
+    padding-bottom: 1rem;
+  }
+}
+
+// About Page Styling ------------------------
+
+.alt-header {
+  height: $navbar-height;
+  background-position: 20% 30%;
+  border-bottom: 3px solid $primary-color;
+  
+}
+
+#bio-section {
+  .bio {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 1rem;
+    
+    & div {
+      text-align: center;
+      background: $light-color;
+      border-left: 3px solid $primary-color;
+    }
+  }
+ 
+  .awards {
+    grid-template-columns: repeat(3, 1fr);
+    
+    .box {
+      background: none;
+      padding: 0 1rem;
+    }
+  }
+}
+
+// Progress Bars
+
+#skills {
+  background: $dark-color;
+  color: #fff;
+  
+  .container {
+    padding: 1.5rem .5rem;
+    %progress-bar {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: $primary-color;
+      border-radius: 4px;
+    
+    }   
+      
+    .bar {
+      &-1, &-2, &-3, &-4, &-5, &-6 {
+        height: .8rem;
+        background: $medium-color;
+        border-radius: 5px;
+        margin-bottom: .6rem;
+        position: relative;
+    
+        &:after {
+          @extend %progress-bar;    
+        }
+      } 
+      &-1:after { width: 100% }  
+      &-2:after { width: 80% }  
+      &-3:after { width: 70% }  
+      &-4:after { width: 100% }  
+      &-5:after { width: 80% }  
+      &-6:after { width: 70% }  
+    }
+   }
+}
+  
+// Skills Icons
+.skill-icons {
+  background: $light-color;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  img { padding: 0 2.5rem }
+}
+
+
+// Testimonials Section
+#testimonials {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: .3rem;
+    padding: 0 .5rem 2rem .5rem;
+
+    .testimony {
+      p {
+        padding: .3rem;
+        border: 1px solid $medium-color;
+        border-radius: 3px;
+        margin-bottom: .3rem;
+        font-size: small;
+      }
+      
+      .person {
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 3rem;
+          border-radius: 50%;
+        }
+
+        small {
+          font-size: .75rem;
+        }
+      }
+    }
+  }
+}
+
+// Work Page Styling------------------------
+#work-section {
+  .head {
+    h5 { font-style: italic;}
+  }
+
+  // the gallery in his own partial file
+  @import 'gallery';
+}
+  
+// Contact Page Styling-------------------------
+#contact {
+  color: $contact-color;
+  
+  #contact-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: .8rem;
+    padding-bottom: 1rem;
+    
+    ::placeholder {
+      font-family: 'Dosis', sans-serif;
+    }
+    
+    * {
+      padding: .3rem;
+      color: grey;
+      
+      &:focus { outline-color: $primary-color}
+    } 
+  
+    input {
+      display: block;
+    }
+  
+    textarea {
+      grid-column: span 2;
+    }
+  
+    .submission {
+      grid-column: 1 / span 2;
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+  
+      .recaptcha {
+        &:has(.g-recaptcha) {
+          padding: 0;
+        }
+      
+        .g-recaptcha {
+          padding: 0;
+          
+          & > *, & > div > * {
+            padding: 0;
+          }
+        }    
+      }
+      
+  
+      input[type='submit'] {
+        margin-top: 0;
+        padding: .8rem 2rem;
+        align-self: center;
+        background: grey;
+        color: #fff; 
+           
+        &:hover { 
+          background: $primary-color; 
+          color: $dark-color;
+        }
+      }
+    }
+  }
+}
+
+
+// Box Section
+#contact-box {
+  background: $contact-color;
+
+  .awards {
+    grid-template-columns: repeat(3, 1fr);
+ 
+    .box {
+      background: none;
+      color: #fff;
+    }
+  }
+}
+
+#tagline {
+  p {
+    text-align: center;
+    color: #fff;
+  }
+}
+
+// Footer ------------------------------
+footer {
+  background: $dark-color;
+  color: #fff;
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem .5rem;
+  }
+  .social {
+    a {
+      color: inherit;
+      display: inline-block;
+      cursor: pointer;
+      
+      i {
+        padding: .5rem;
+        margin-left: .5rem;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        
+        &:hover {
+          background: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+// Import Media Queries---------------------------
+@import 'media';
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>   
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/9ea2f38822.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <title>John Doe | UI/UX Designer & Photographer</title>
+</head>
+
+<body>
+  <header class="main-header alt-header">
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <a href="index.html"><img src="img/logo.png" alt="Initials"></a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html"><h4>Home</h4></a></li>
+            <li><a href="about.html"><h4>About</h4></a></li>
+            <li><a href="work.html"><h4>Work</h4></a></li>
+            <li><a class="current" href="contact.html"><h4>Contact</h4></a></li>
+          </ul>
+        </nav>
+    </div>
+  </header>
+
+  <section id="contact">
+    <div class="container ">
+      <div class="head py-2">
+        <h2>Contact Me</h2>
+        <div class="line"></div>
+        <p>Here is how you can reach me</p>
+      </div>
+
+      <form id="contact-form" method="post" data-netlify-recaptcha="true" data-netlify="true" netlify>
+        <input type="text" id="name" name="name" placeholder="Name">
+        <input type="email" id="email" name="email" placeholder="Email Address">
+        <input type="text" id="subject" name="subject" placeholder="Subject">
+        <input type="tel"  id="phone" name="phone" placeholder="Phone Number">        
+        <textarea id="message" name="message" cols="30" rows="10" placeholder="Enter Message"></textarea>
+
+        <div class="submission">
+          <div data-netlify-recaptcha="true" class="recaptcha"></div>
+          <input type="submit" class="btn-dark" value="Submit">
+        </div>
+
+      </form>
+    </section>
+    
+    <section id="contact-box">
+      <div class="container awards">
+        <div class="box py-1">
+          <i class="fa-solid fa-envelope fa-2x"></i>
+          <h3>Email</h3>
+          <p>johndoe@jdcorp.org</p>
+        </div>
+        
+        <div class="box py-1">
+          <i class="fa-solid fa-phone fa-2x"></i>
+          <h3>Phone</h3>
+          <p>(811)555-5555</p>
+        </div>
+        
+        <div class="box py-1">
+          <i class="fa-solid fa-address-card fa-2x"></i>
+          <h3>Address</h3>
+          <p>415 East 71st, New York</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tagline" class="l-heading py-2 bg-primary">
+      <p>Let's Start<span> Our </span>Next Project!</p>
+    </section>
+
+  <footer class="contact-bg">
+    <div class="container py-1">
+      <h6>Copyright&copy;2023, All Rights Reserved</h6>
+      <div class="social">
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

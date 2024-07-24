@@ -1,0 +1,184 @@
+
+.container {
+  max-width: $website-width;
+  margin: auto; 
+}
+
+// Color & Classes
+.color-primary { color: $primary-color}
+
+.bg {
+  &-primary {
+    background: $primary-color;
+    color: set-text-color( $primary-color)
+  }
+  &-light {
+    background: $light-color;
+    color: set-text-color( $light-color)
+  }
+  &-medium {
+    background: $medium-color;
+    color: set-text-color( $medium-color)
+  }
+  &-dark {
+    background: $dark-color;
+    color: set-text-color( $dark-color)
+  }
+}
+
+.contact-bg {
+  background: $contact-color;
+}
+
+// Padding Classes-----------
+
+.py-1 { padding: 1rem 0 }
+.py-2 { padding: 2rem 0 }
+.py-3 { padding: 3rem 0 }
+.p-1 { padding: 1rem }
+.p-2 { padding: 2rem }
+.p-3 { padding: 3rem }
+
+.l-heading { font-size: 4rem}
+
+// Button Classes
+%btn-shared {
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  padding: .75rem 2rem;
+  margin-top: 1rem;
+  transition: all .5s;
+}
+
+.btn {
+  &-primary {
+    @extend %btn-shared;
+    background: $primary-color;
+  }
+  &-light {
+    @extend %btn-shared; 
+    background: $light-color;
+  }
+  &-dark {
+    @extend %btn-shared;
+    background: $dark-color;
+    color: #fff;
+  }
+}
+
+button[class^='btn-']:hover,
+a[class^='btn-']:hover,
+input[class^='btn-']:hover {
+  background: $primary-color;
+  color: $dark-color;
+}
+
+// Competence Section --------------------
+.head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+  .line {
+    width: 3rem;
+    border-top: 2px solid $primary-color;
+    margin: .5rem 0;
+  }
+}
+
+// Icons -----------------------------
+
+%icon-shared {
+  padding: 1.5rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.icon {
+  &-dark-1,
+  &-dark-2,
+  &-dark-3,
+  &-dark-4 {
+    @extend %icon-shared;
+    background: $dark-color;
+    color: #fff;
+  }
+
+  &-dark-1 {
+    padding: 1.5rem 2rem;
+  }
+  
+} 
+
+
+%icon-dark-shared {
+  font-size: 1.2rem;
+  font-family: serif;
+  padding: .5rem;
+  position: absolute;
+  top: 0;
+  left: 75%;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: $primary-color;
+  transition: all 1s ease;
+}
+
+.icon-dark {
+  &-1:after {
+    @extend %icon-dark-shared;
+    content: '1';
+  }
+  &-2:after {
+    @extend %icon-dark-shared;
+    content: '2';
+  }  
+  &-3:after {
+    @extend %icon-dark-shared;
+    content: '3';
+  }  
+  &-4:after {
+    @extend %icon-dark-shared;
+    content: '4';
+  }
+}
+
+.icon {
+  transition: all 1s ease;
+  &:hover {
+    background: $primary-color;
+    transform: scale(1.2);
+    
+    &.icon-dark-1:after,
+    &.icon-dark-2:after,
+    &.icon-dark-3:after,
+    &.icon-dark-4:after {
+      background: $dark-color;
+      color: #fff;;
+    }
+  }
+}
+
+
+// Awards Class
+.awards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+
+  .box {
+    line-height: 2;
+    background: $medium-color;
+
+    p { font-size: 1.2rem}
+
+    h4 { font-size: 1.5rem}
+    
+    &:nth-child(even){ background: $light-color;}
+  }
+}
