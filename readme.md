@@ -4,7 +4,7 @@ This is a portfolio website built using `HTML`, `CSS` and `SASS` compiler from t
 (link to the revamp version on Udemy).
 
 ![app screenshot](/dist/img/screenshot.png)
-Demo: [**Portfolio Website**](https://lovely-melba-533b55.netlify.app/)   
+Demo: &ensp;**https://lovely-melba-533b55.netlify.app/**   
 
 ## Usage
 
