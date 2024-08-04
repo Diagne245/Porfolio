@@ -1,10 +1,11 @@
 # Portfolio Website
 
+Demo: &ensp;**https://lovely-melba-533b55.netlify.app/**
+
 This is a portfolio website built using `HTML`, `CSS` and `SASS` compiler from the [**Modern HTML & CSS From The Beginning**](https://www.udemy.com/course/modern-html-css-from-the-beginning/?couponCode=LETSLEARNNOW) Traversy Media Course
 (link to the revamp version on Udemy).
 
 ![app screenshot](/dist/img/screenshot.png)
-Demo: &ensp;**https://lovely-melba-533b55.netlify.app/**   
 
 ## Usage
 
