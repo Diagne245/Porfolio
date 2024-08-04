@@ -28,7 +28,3 @@ The compiled files will be put into the dist/css folder - you only need to edit 
 We used `Netlify` Hosting Services to deploy the project.
 
 To make the contact form work, adapt the contact form attributes to your hosting service.
-
-### Optimization
-
-Images used in the gallery section can be optimized for better performance.
